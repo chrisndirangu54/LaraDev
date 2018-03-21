@@ -13,7 +13,7 @@ class UserSeed extends Seeder
     {
         $items = [
 
-            ['id' => 1, 'name' => 'Admin', 'email' => 'admin@admin.com', 'password' => bcrypt('password'), 'role_id' => 1, 'remember_token' => ''],
+            ['id' => 1, 'name' => 'Admin', 'email' => 'admin@laradev.com', 'password' => bcrypt('password'), 'role_id' => 1, 'remember_token' => ''],
 
         ];
 

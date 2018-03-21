@@ -1,4 +1,4 @@
-# LaraDev: Laravel 5.5, system based in the __Larancer__ form [LaravelDaily](https://github.com/LaravelDaily/Larancer-QuickAdminPanel) for freelancers to manage their clients/projects/income/Notes/Tasks/Articles/VideoLinks
+# LaraDev: Laravel 5.5, system based in the __Larancer__ from [LaravelDaily](https://github.com/LaravelDaily/Larancer-QuickAdminPanel)
 
 ## Installation
 
@@ -12,6 +12,7 @@
 ## About LaraDev
 
 LaraDev is a web application for developers focused in providing a confortable way to keep up with the day to day life for coders.
+For freelancers to help us manage our clients/projects/income/Notes/Tasks/Articles/VideoLinks/etc
 
 ## Main-Features planned to implement in LaraDev
 ### { Those with asterisk (*) are implemented }

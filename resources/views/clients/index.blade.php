@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('styles')
+
+    <style>
+        .table th { text-align: center; vertical-align: middle; }
+        .table td { text-align: center; vertical-align: middle; }
+    </style>
+
+@endsection
+
 @section('content')
     <h3 class="page-title">Clients</h3>
 
@@ -13,7 +22,7 @@
         </div>
 
         <div class="panel-body">
-            <table class="table table-bordered table-striped {{ count($clients) > 0 ? 'datatable' : '' }} dt-select">
+            <table class="table table-bordered table-striped {{ count($clients) > 0 ? 'datatable' : '' }} dt-select" width="100%">
                 <thead>
                     <tr>
                         <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
@@ -22,16 +31,13 @@
                         <th>Company name</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Website</th>
-                        <th>Skype</th>
-                        <th>Country</th>
                         <th>Client status</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
                 
                 <tbody>
-                    @if (count($clients) > 0)
+                    @if (!empty($clients))
                         @foreach ($clients as $client)
                             <tr data-entry-id="{{ $client->id }}">
                                 <td></td>
@@ -40,17 +46,24 @@
                                 <td>{{ $client->company_name }}</td>
                                 <td>{{ $client->email }}</td>
                                 <td>{{ $client->phone }}</td>
-                                <td>{{ $client->website }}</td>
-                                <td>{{ $client->skype }}</td>
-                                <td>{{ $client->country }}</td>
                                 <td>{{ $client->client_status->title or '' }}</td>
-                                <td><a href="{{ route('clients.show',[$client->id]) }}" class="btn btn-xs btn-primary">View</a><a href="{{ route('clients.edit',[$client->id]) }}" class="btn btn-xs btn-info">Edit</a>{!! Form::open(array(
-                'style' => 'display: inline-block;',
-                'method' => 'DELETE',
-                'onsubmit' => "return confirm('".trans("Are you sure?")."');",
-                'route' => ['clients.destroy', $client->id])) !!}
-    {!! Form::submit('Delete', array('class' => 'btn btn-xs btn-danger')) !!}
-    {!! Form::close() !!}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="{{ route('clients.show',[$client->id]) }}" class="btn btn-xs btn-primary">
+                                            View
+                                        </a>
+                                        <a href="{{ route('clients.edit',[$client->id]) }}" class="btn btn-xs btn-info">
+                                            Edit
+                                        </a>
+                                        {!! Form::open(array(
+                                            'style' => 'display: inline-block;',
+                                            'method' => 'DELETE',
+                                            'onsubmit' => "return confirm('".trans("Are you sure?")."');",
+                                            'route' => ['clients.destroy', $client->id])) !!}
+                                        {!! Form::submit('Delete', array('class' => 'btn btn-xs btn-danger')) !!}
+                                        {!! Form::close() !!}
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     @else
