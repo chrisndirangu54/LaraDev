@@ -36,6 +36,11 @@
                                 <p>{{ Session::get('message') }}</p>
                             </div>
                         @endif
+                            @if (Session::has('success'))
+                                <div class="alert alert-success">
+                                    <p>{{ Session::get('success') }}</p>
+                                </div>
+                            @endif
                         @if ($errors->count() > 0)
                             <div class="note note-danger">
                                 <ul class="list-unstyled">

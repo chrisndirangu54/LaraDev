@@ -32,7 +32,9 @@
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Client status</th>
-                        <th>&nbsp;</th>
+                        <th>
+                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                        </th>
                     </tr>
                 </thead>
                 
