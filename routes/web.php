@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     #Articles
     Route::resource('articles', 'ArticlesController');
+    Route::post('articles_mass_destroy', 'ArticlesController@massDestroy')->name('articles.mass_destroy');
     #Article-Categories
     Route::resource('article-categories', 'ArticleCategoriesController');
     Route::post('article-categories_mass_destroy', 'ArticleCategoriesController@massDestroy')->name('article-categories.mass_destroy');

@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">Articles</h3>
-    {!! Form::open(['method' => 'POST', 'route' => ['articles.store']]) !!}
+    <h3 class="page-title">Article: {{ $article->name }}</h3>
+
+    {!! Form::model($article, ['method' => 'PUT', 'route' => ['articles.update', $article->id]]) !!}
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            Create
+            Edit
         </div>
 
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('name', 'Article*', ['class' => 'control-label']) !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+                    {!! Form::label('name', 'Name*', ['class' => 'control-label']) !!}
+                    {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('name'))
                         <p class="help-block">
@@ -62,7 +63,7 @@
         </div>
     </div>
 
-    {!! Form::submit('Save', ['class' => 'btn btn-success']) !!}
+    {!! Form::submit('Update', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 @stop
 

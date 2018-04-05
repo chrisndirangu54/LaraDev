@@ -33,7 +33,8 @@
                                 <input type="email"
                                        class="form-control"
                                        name="email"
-                                       value="{{ old('email') }}">
+                                       value="{{ old('email') }}"
+                                       autofocus>
                             </div>
                         </div>
 
